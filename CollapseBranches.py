@@ -28,7 +28,7 @@ for tree in trees:
 # Collapse nodes with less than args.cutoff bootstrap support
     for node in t.traverse():
         if not node.is_leaf() and not node.is_root():
-            if node.support < args.cutoff :
+            if node.support < args.bootstrap :
                 node.delete()
 # Write the output
     t.write(outfile=tree+".collapsed."+str(args.bootstrap)+".tre")              
