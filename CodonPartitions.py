@@ -31,9 +31,7 @@ for a in glob.glob(args.alignments+"*"+args.ext):
 
 for a in alignments:
     ali = AlignIO.read(a, "fasta")
-
-    ali.close()
-    seqlen = len(seq)
+    seqlen = len(ali[0])
     if seqlen % 3 == 0:
         strlen = str(seqlen)
         p1 = "DNA, p1 = 1-" + strlen + "\\3" + "\n"
